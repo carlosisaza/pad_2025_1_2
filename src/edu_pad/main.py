@@ -5,7 +5,6 @@ import pandas as pd
 
 def main():
     dataweb = DataWeb()
-    df = pd.DataFrame()
     df = dataweb.obtener_datos()
     df.to_csv("data_web.csv")
 

@@ -46,10 +46,10 @@ class DataWeb:
  
 
 
-
+            return df
         except Exception as err:
             print("Error en la funcion obtener_datos")
- 
+            df = pd.DataFrame()
    
     
 #dw = DataWeb()
