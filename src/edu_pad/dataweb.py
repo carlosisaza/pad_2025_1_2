@@ -50,16 +50,7 @@ class DataWeb:
         except Exception as err:
             print("Error en la funcion obtener_datos")
  
-    def convertir_numericos(self,df=pd.DataFrame()):
-        df= df.copy()
-        if len(df)>0:
-            #for col in (df.columns):
-            for col in ('abrir',	'max',	'min',	'cerrar',	'cierre_ajustado',	'volumen'):
-                df[col] = (df[col]
-                           .str.replace(r"\.","",regex=True)
-                           .str.replace(",",'.'))
-
-        return df
+   
     
 #dw = DataWeb()
 #dw.obtener_datos()
