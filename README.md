@@ -30,8 +30,13 @@ Se ejecuta después de una ingesta exitosa, cada 6 horas o manualmente
 Para que este workflow funcione correctamente, necesitas configurar los siguientes secretos en GitHub:
 
 1. Para el envío de alertas por correo electrónico:
+   
 EMAIL_SENDER: Dirección de correo del remitente
+
 EMAIL_RECEIVER: Dirección de correo del destinatario
+
 EMAIL_PASSWORD: Contraseña o token de la cuenta del remitente
+
 SMTP_SERVER: Servidor SMTP (valor predeterminado: smtp.gmail.com)
+
 SMTP_PORT: Puerto SMTP (valor predeterminado: 587)
