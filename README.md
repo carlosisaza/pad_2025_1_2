@@ -34,3 +34,48 @@ Para que este workflow funcione correctamente, necesitas configurar los siguient
 - EMAIL_PASSWORD: Contraseña o token de la cuenta del remitente
 - SMTP_SERVER: Servidor SMTP (valor predeterminado: smtp.gmail.com)
 - SMTP_PORT: Puerto SMTP (valor predeterminado: 587)
+
+
+# Estructura del Proyecto
+proyecto/
+├── .github/
+│   └── workflows/
+│       ├── 0-Setup-Environment.yml
+│       ├── 1-Data-Extraction.yml
+│       ├── 2-Data-Ingestion.yml
+│       └── 3-Data-Monitoring.yml
+├── src/
+│   └── edu_pad/
+│       ├── database.py
+│       ├── dataweb.py
+│       ├── main_extractor.py
+│       ├── main_ingesta.py
+│       ├── monitor.py
+│       └── static/
+│           ├── csv/
+│           ├── db/
+│           └── logs/
+├── setup.py
+└── README.md
+
+
+# Instalación
+1. Clona este repositorio
+2. Configura los secretos en GitHub
+3. Los workflows se ejecutarán automáticamente según lo programado o puedes iniciarlos manualmente
+
+# Características Principales
+- Modular: Cada fase del ETL está en su propio archivo YAML
+- Condicional: Los jobs dependen del éxito de los anteriores
+- Monitoreo automatizado: Análisis de tendencias y detección de anomalías
+- Alertas: Notificaciones por correo cuando hay problemas o cambios importantes
+- Persistencia de artefactos: Los datos y logs se conservan entre ejecuciones
+- Instalación simplificada: Utiliza setup.py para gestionar dependencias
+
+# Personalización
+Para adaptar este workflow a tus necesidades:
+
+1. Modifica dataweb.py para extraer datos de otras fuentes
+2. Ajusta la frecuencia de ejecución modificando las expresiones cron en los archivos YAML
+3. Añade más análisis o transformaciones en la clase DatabaseMonitor
+4. Actualiza setup.py si necesitas instalar paquetes adicionales
