@@ -38,26 +38,7 @@ Para que este workflow funcione correctamente, necesitas configurar los siguient
 
 # Estructura del Proyecto
 
-proyecto/
-├── .github/
-│   └── workflows/
-│       ├── 0-Setup-Environment.yml
-│       ├── 1-Data-Extraction.yml
-│       ├── 2-Data-Ingestion.yml
-│       └── 3-Data-Monitoring.yml
-├── src/
-│   └── edu_pad/
-│       ├── database.py
-│       ├── dataweb.py
-│       ├── main_extractor.py
-│       ├── main_ingesta.py
-│       ├── monitor.py
-│       └── static/
-│           ├── csv/
-│           ├── db/
-│           └── logs/
-├── setup.py
-└── README.md
+
 
 
 # Instalación
