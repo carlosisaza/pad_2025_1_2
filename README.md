@@ -37,6 +37,7 @@ Para que este workflow funcione correctamente, necesitas configurar los siguient
 
 
 # Estructura del Proyecto
+
 proyecto/
 ├── .github/
 │   └── workflows/
