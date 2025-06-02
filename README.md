@@ -1,7 +1,7 @@
 # Workflow de ETL para Datos del Oro con GitHub Actions
 Este proyecto implementa un flujo completo de ETL (Extracción, Transformación y Carga) para datos del Oro usando GitHub Actions como orquestador de CI/CD.
 
-##Estructura del Flujo de Trabajo
+## Estructura del Flujo de Trabajo
 El proceso está dividido en cuatro workflows de GitHub Actions:
 
 1. Setup Environment (0-Setup-Environment.yml)
@@ -26,7 +26,7 @@ Data Monitoring (3-Data-Monitoring.yml)
 Genera logs y envía alertas si es necesario
 Se ejecuta después de una ingesta exitosa, cada 6 horas o manualmente
 
-#Requisitos para la Configuración
+# Requisitos para la Configuración
 Para que este workflow funcione correctamente, necesitas configurar los siguientes secretos en GitHub:
 
 1. Para el envío de alertas por correo electrónico:
