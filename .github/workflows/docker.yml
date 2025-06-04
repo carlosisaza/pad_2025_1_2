@@ -1,0 +1,12 @@
+name: pruebas hola mundo docker
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Paso 1 - Checkout Repositorio
+        uses: actions/checkout@v4
