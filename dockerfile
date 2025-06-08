@@ -12,8 +12,4 @@ RUN pip install --upgrade pip \
 
 ENV PYTHONPATH=/pad_2025_1_2/src
 
-
-ENTRYPOINT ["python", "-m"]
-
-
-CMD ["edu_pad.main"]
+CMD ["python", "-m","edu_pad.main"]
