@@ -4,22 +4,22 @@ Un pipeline de datos automatizado que extrae, transforma y carga datos históric
 Este proyecto implementa un flujo de trabajo ETL (Extracción, Transformación y Carga) completamente automatizado para obtener datos del oro desde fuentes públicas. El pipeline está diseñado para ser modular, robusto y fácil de monitorear, utilizando GitHub Actions como el orquestador principal.
 
 ## ¿Cómo Funciona el Pipeline ETL?
-El proceso está dividido en cuatro flujos de trabajo secuenciales y condicionales que garantizan la integridad del dato en cada etapa.
-## 1.	Preparación del Entorno (0-Setup-Environment.yml)
-•	Acción: Prepara el entorno, crea la estructura de directorios necesaria e instala todas las dependencias del proyecto definidas en setup.py.
-•	Disparador: Se ejecuta automáticamente con cada push a la rama main o puede ser iniciado manualmente.
-## 2.	Extracción de Datos (1-Data-Extraction.yml)
-•	Acción: Extrae los datos históricos del oro desde Yahoo Finance y los guarda temporalmente como un artefacto (gold_data.csv).
-•	Disparador: Programado para ejecutarse cada 12 horas o manualmente. Si este paso falla, todo el pipeline se detiene para prevenir datos corruptos.
-## 3.	Ingesta de Datos (2-Data-Ingestion.yml)
-•	Acción: Carga los datos desde el archivo .csv a una base de datos SQLite. Una vez completada la carga, el archivo temporal es eliminado.
-•	Disparador: Se ejecuta automáticamente solo si el workflow de extracción fue exitoso.
-## 4.	Monitoreo de Datos (3-Data-Monitoring.yml)
-•	Acción: Realiza verificaciones de integridad, analiza tendencias y busca anomalías en los datos cargados en la base de datos. Genera logs y envía alertas por correo electrónico si detecta problemas.
-•	Disparador: Se ejecuta después de una ingesta exitosa, de forma programada cada 6 horas o manualmente.
+El proceso está dividido en cuatro flujos de trabajo secuenciales y condicionales que garantizan la integridad del dato en cada etapa.  
+## 1.	Preparación del Entorno (0-Setup-Environment.yml)  
+•	Acción: Prepara el entorno, crea la estructura de directorios necesaria e instala todas las dependencias del proyecto definidas en setup.py.  
+•	Disparador: Se ejecuta automáticamente con cada push a la rama main o puede ser iniciado manualmente.  
+## 2.	Extracción de Datos (1-Data-Extraction.yml)  
+•	Acción: Extrae los datos históricos del oro desde Yahoo Finance y los guarda temporalmente como un artefacto (gold_data.csv).  
+•	Disparador: Programado para ejecutarse cada 12 horas o manualmente. Si este paso falla, todo el pipeline se detiene para prevenir datos corruptos.  
+## 3.	Ingesta de Datos (2-Data-Ingestion.yml)  
+•	Acción: Carga los datos desde el archivo .csv a una base de datos SQLite. Una vez completada la carga, el archivo temporal es eliminado. 
+•	Disparador: Se ejecuta automáticamente solo si el workflow de extracción fue exitoso.  
+## 4.	Monitoreo de Datos (3-Data-Monitoring.yml)  
+•	Acción: Realiza verificaciones de integridad, analiza tendencias y busca anomalías en los datos cargados en la base de datos. Genera logs y envía alertas por correo electrónico si detecta problemas.  
+•	Disparador: Se ejecuta después de una ingesta exitosa, de forma programada cada 6 horas o manualmente.  
 
-# Configuración de Secretos
-Para que el pipeline funcione correctamente, especialmente el sistema de alertas, se  debe configurar los siguientes secretos en tu repositorio de GitHub (Settings > Secrets and variables > Actions).
+# Configuración de Secretos  
+Para que el pipeline funcione correctamente, especialmente el sistema de alertas, se  debe configurar los siguientes secretos en tu repositorio de GitHub (Settings > Secrets and variables > Actions).  
 Secreto	                    Descripción
 EMAIL_SENDER	            Dirección de correo que enviará la alerta.
 EMAIL_RECEIVER	            Dirección de correo que recibirá la alerta.
